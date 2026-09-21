@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Performance Prediction</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Student Performance Prediction</h1>
+            <p>Predict the student's final performance using Deep Learning</p>
+        </div>
+
+        <div class="form-card">
+
+            <h2>Enter Student Details</h2>
+
+            <form id="predictionForm">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>School</label>
+                        <select id="school" required>
+                            <option value="">Select</option>
+                            <option value="GP">GP</option>
+                            <option value="MS">MS</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Gender</label>
+                        <select id="sex" required>
+                            <option value="">Select</option>
+                            <option value="F">Female</option>
+                            <option value="M">Male</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Age</label>
+                        <input type="number" id="age" min="15" max="25" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Address</label>
+                        <select id="address" required>
+                            <option value="">Select</option>
+                            <option value="U">Urban</option>
+                            <option value="R">Rural</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Family Size</label>
+                        <select id="famsize" required>
+                            <option value="">Select</option>
+                            <option value="LE3">Less than or equal to 3</option>
+                            <option value="GT3">Greater than 3</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Parent Status</label>
+                        <select id="Pstatus" required>
+                            <option value="">Select</option>
+                            <option value="T">Together</option>
+                            <option value="A">Apart</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Mother Education</label>
+                        <input type="number" id="Medu" min="0" max="4" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Father Education</label>
+                        <input type="number" id="Fedu" min="0" max="4" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Mother's Job</label>
+                        <select id="Mjob" required>
+                            <option value="">Select</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="health">Health</option>
+                            <option value="services">Services</option>
+                            <option value="at_home">At Home</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Father's Job</label>
+                        <select id="Fjob" required>
+                            <option value="">Select</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="health">Health</option>
+                            <option value="services">Services</option>
+                            <option value="at_home">At Home</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Reason for School Choice</label>
+                        <select id="reason" required>
+                            <option value="">Select</option>
+                            <option value="home">Home</option>
+                            <option value="reputation">Reputation</option>
+                            <option value="course">Course</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Guardian</label>
+                        <select id="guardian" required>
+                            <option value="">Select</option>
+                            <option value="mother">Mother</option>
+                            <option value="father">Father</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Travel Time</label>
+                        <input type="number" id="traveltime" min="1" max="4" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Study Time</label>
+                        <input type="number" id="studytime" min="1" max="4" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Previous Failures</label>
+                        <input type="number" id="failures" min="0" max="4" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Family Relationship</label>
+                        <input type="number" id="famrel" min="1" max="5" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Free Time</label>
+                        <input type="number" id="freetime" min="1" max="5" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Going Out</label>
+                        <input type="number" id="goout" min="1" max="5" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Workday Alcohol Consumption</label>
+                        <input type="number" id="Dalc" min="1" max="5" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Weekend Alcohol Consumption</label>
+                        <input type="number" id="Walc" min="1" max="5" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Health Status</label>
+                        <input type="number" id="health" min="1" max="5" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Absences</label>
+                        <input type="number" id="absences" min="0" required>
+                    </div>
+
+                </div>
+
+                <div class="checkbox-section">
+
+                    <label>
+                        <input type="checkbox" id="schoolsup">
+                        Extra Educational Support
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="famsup">
+                        Family Educational Support
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="paid">
+                        Extra Paid Classes
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="activities">
+                        Extra Activities
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="nursery">
+                        Attended Nursery School
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="higher">
+                        Wants Higher Education
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="internet">
+                        Internet Access
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="romantic">
+                        Romantic Relationship
+                    </label>
+
+                </div>
+
+                <button type="submit" id="predictButton">
+                    Predict Performance
+                </button>
+
+            </form>
+
+            <div id="result" class="result">
+                <h2>Prediction Result</h2>
+                <p id="predictionText">Enter student details and click predict.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
